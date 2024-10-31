@@ -15,11 +15,11 @@ import Badges from "~/components/Badges.astro"
                 <Image
                     src={aboutImg}
                     alt="Imagen"
-                    class="w-full h-auto rounded-md object-cover"
+                    class="w-full h-auto rounded-lg opacity-[.5] object-cover"
                 />
             </div>
-            <div class="text-[17px] mt-6">
-                <p class="font-normal leading-6 mb-4">
+            <div class="mt-6 inText">
+                <p class="text-[19px] font-normal leading-6 mb-4">
                     I’m Tobias, a 19yo cybersecurity enthusiast based at Argentina. I’ve always been passionate about technology, which led me to pursue a Technical Degree in Computer Networks at UNO University.
   I’m excited to continue learning and growing in this field, while contributing to the cybersecurity community. I’m currently working towards ISC2 CC and CISCO EH certifications.
                 </p>
@@ -41,3 +41,11 @@ import Badges from "~/components/Badges.astro"
 <Badges />
 </section>
 </LayoutDefault>
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap');
+  
+    .inText {
+      font-family: "Pixelify Sans", serif;  
+    }
+  </style>

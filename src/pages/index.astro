@@ -4,9 +4,6 @@ import Post from '~/components/Post.astro'
 import { getPosts, getPostDescription } from '~/utils'
 import Pagination from '~/components/Pagination.astro'
 
-import { Image } from "astro:assets";
-import Gif from "../assets/images/ghost-in-the-shell.gif";
-
 const posts = (await getPosts()).slice(0, 5)
 
 const { translate: t } = Astro.locals
@@ -14,11 +11,11 @@ const { translate: t } = Astro.locals
 ---
 
 <LayoutDefault>
-<div class="mb-[30px]">
-  <Image src={Gif} alt="Imagen" class="w-full h-auto rounded-md object-cover mb-6"/>
-    <p class="text-[17px] mb-2 leading-6 font-normal">Cybersecurity Enthusiast with Hands-on Penetration Testing Experience | CTF Player | Computer Networks Student</p>
+  <body>
+<div class="mb-[30px] inText">
+    <p class="text-[22px] mb-4 leading-6 font-normal">Cybersecurity Enthusiast with Hands-on Penetration Testing Experience | CTF Player | Computer Networks Student</p>
     <div class="text-[#fff] mt-2">
-      <a class="text-[10px] sm:text-[17px]" href="mailto:tobifgabriel@gmail.com">echo 'dG9iaWZnYWJyaWVsQGdtYWlsLmNvbQ==' | base64 -d
+      <a class="text-[12px] sm:text-[17px]" href="mailto:tobifgabriel@gmail.com">echo 'dG9iaWZnYWJyaWVsQGdtYWlsLmNvbQ==' | base64 -d
       </a>
   </div>
   <div class="mt-4 flex gap-x-2 text-[17px]">
@@ -45,5 +42,13 @@ const { translate: t } = Astro.locals
     }
     <Pagination showLeft={false} showPageCount={false} rightTitle={t('all_posts')} rightUrl={'posts/page/1'} />
   </section>
+  </body>
 </LayoutDefault>
 
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap');
+
+  .inText {
+    font-family: "Pixelify Sans", serif;  
+  }
+</style>
