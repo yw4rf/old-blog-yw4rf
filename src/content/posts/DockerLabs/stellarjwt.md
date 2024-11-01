@@ -143,11 +143,11 @@ Procedemos a realizar un bypass de contraseña explotando el binario `chown` con
 
 ![StellarJWT Yw4rf](../../../assets/DockerLabs/StellarJWT/stellar-25.png)
 
-Como no tenemos un editor de texto en la máquina victima, desde la máquina atacante creo un archivo y pego el `etc/shadow` de la victima y elimino la `x`
+Como no tenemos un editor de texto en la máquina victima, desde la máquina atacante creo un archivo y pego el `etc/passwd` de la victima y elimino la `x`
  
 ![StellarJWT Yw4rf](../../../assets/DockerLabs/StellarJWT/stellar-26.png)
 
-Con `sudo chown elite:elite /etc/passwd` cambio los permisos de propiedad del archivo `/etc/passwd` al usuario **elite** lo que nos permite realizar cambios en el `/etc/shadow`. Procedemos con `echo '{el contenido /etc/passwd modificado sin la x}' > /etc/passwd` a sobreescribir el contenido archivo con el `/etc/passwd` sin la `x` en una cadena de texto literal
+Con `sudo chown elite:elite /etc/passwd` cambio los permisos de propiedad del archivo `/etc/passwd` al usuario **elite** lo que nos permite realizar cambios en el `/etc/passwd`. Procedemos con `echo '{el contenido /etc/passwd modificado sin la x}' > /etc/passwd` a sobreescribir el contenido archivo con el `/etc/passwd` sin la `x` en una cadena de texto literal
 
 ![StellarJWT Yw4rf](../../../assets/DockerLabs/StellarJWT/stellar-27.png)
 
